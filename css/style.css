@@ -126,6 +126,7 @@ p.slide-numbering.left {
   height: 9.8em;
   width: 15em;
   max-width: max-content;
+  min-width: max-content;
   z-index: 2;
 }
 .logo.dark {
