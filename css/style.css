@@ -1,0 +1,4513 @@
+/*Declaration of main variables*/
+/*#region variables*/
+:root {
+  --liftactive-red: rgb(189, 33, 33);
+  --liftactive--grey: rgb(225, 225, 230);
+
+  --forbidden-red-c: rgb(192, 32, 38);
+
+  --light-c: rgb(255, 255, 255);
+  --dark-c: rgb(0, 0, 0)
+}
+/*#endregion variables*/
+
+/*Custom animations*/
+/*#region animations*/
+@keyframes incrementAppearing {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes rotateAppearing {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+  90% {
+    transform: scale(1) rotate(90deg);
+  }
+  100% {
+    transform: scale(0) rotate(90deg);
+  }
+}
+/*#endregion animations*/
+
+/*Add general style for all slides*/
+/* #region generalStyle */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: var(--dark-c);
+}
+h1, h2, h3 {
+  font-family: inherit;
+  font-weight: 400;
+}
+strong {
+  font-weight: 700;
+}
+p {
+  font-family: inherit;
+}
+strong, span {
+  font-family: inherit;
+  display: inline-block;
+}
+button {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+img {
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+.slide__container {
+  height: 100vh;
+  max-height: -webkit-fill-available;
+  width: 100%;
+}
+.slide {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 10em;
+  padding-right: 10em;
+}
+.df {
+  display: flex;
+}
+sup {
+  position: relative;
+  top: -1em;
+  font-size: 0.5em;
+  line-height: 0.5em;
+}
+p.slide-numbering {
+  position: absolute;
+  bottom: 1.15em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(105, 105, 105);
+  font-size: 2.8em;
+  z-index: 2;
+}
+p.slide-numbering.white {
+  color: var(--light-c);
+}
+p.slide-numbering.left {
+  transform: translateX(0);
+  bottom: 1em;
+}
+.logo {
+  position: absolute;
+  top: 4em;
+  right: 9em;
+  height: 9.8em;
+  z-index: 2;
+}
+.logo.dark {
+  filter: invert(1);
+}
+/* #endregion generalStyle */
+
+/*#region sl1*/
+.slide--1 {
+  padding: 0;
+}
+.slide--1__bg {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.slide--1 img.slide--1__logo, .slide--1 p.slide--1__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.slide--1 img.slide--1__logo {
+  top: 25em;
+  width: 65em;
+  height: auto;
+}
+.slide--1 p.slide--1__title {
+  top: 15.3em;
+  text-align: center;
+  font-size: 5.3em;
+  line-height: 1.13em;
+  font-weight: 700;
+  color: var(--light-c);
+}
+/*#endregion sl1*/
+
+/*#region sl2*/
+.slide--2__content {
+  position: relative;
+  left: -2em;
+  justify-content: space-around;
+}
+.slide--2__block {
+  position: relative;
+  width: 35.5em;
+  min-width: 35.5em;
+}
+.slide--2__block.fifth {
+  margin-top: 17.5em;
+}
+.slide--2__block img {
+  height: auto;
+}
+.slide--2__block-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.slide--2__block.fifth .slide--2__block-text {
+  left: 49%;
+}
+.slide--2__block.second .slide--2__block-text,
+.slide--2__block.fourth .slide--2__block-text {
+  color: var(--light-c);
+}
+.slide--2__block.first .slide--2__block-text {
+  top: 66.3em;
+}
+.slide--2__block.second .slide--2__block-text {
+  top: 73.3em;
+}
+.slide--2__block.third .slide--2__block-text {
+  top: 51.3em;
+}
+.slide--2__block.fourth .slide--2__block-text {
+  top: 55.3em;
+}
+.slide--2__block.fifth .slide--2__block-text {
+  top: 27.8em;
+}
+.slide--2__block h3, .slide--2__block p, .slide--2__block h4 {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slide--2__block h3 {
+  font-size: 3.5em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+.slide--2__block.fifth .slide--2__block-text h3 strong {
+  letter-spacing: -0.05em;
+}
+.slide--2__block.fifth h3 {
+  font-size: 3.4em;
+}
+.slide--2__block p {
+  font-size: 2.3em;
+  line-height: 1.1em;
+  font-weight: 700;
+}
+.slide--2__block.fourth p {
+  font-size: 2.15em;
+}
+.slide--2__block p span {
+  font-size: 0.8em;
+  line-height: 0.9em;
+}
+.slide--2__block h4 {
+  font-size: 8em;
+}
+/*#endregion sl2*/
+
+/*#region sl3*/
+.slide--3 .slide__content {
+  justify-content: space-evenly;
+  gap: 3em;
+}
+
+.slide--3__img {
+  position: relative;
+}
+.slide--3__img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7em;
+  background: linear-gradient(to top, var(--light-c), transparent);
+}
+.slide--3__img img {
+  width: 59em;
+}
+
+.slide--3__left {
+  text-align: right;
+  margin-top: 25em;
+}
+.slide--3__left h2 {
+  font-size: 11.5em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+.slide--3__left h3 {
+  width: max-content;
+  font-size: 4em;
+  line-height: 1.1em;
+  font-weight: 700;
+}
+
+.slide--3__right {
+  margin-top: 20em;
+}
+.slide--3__block {
+  position: relative;
+  padding-left: 2em;
+}
+.slide--3__block.first {
+  margin-bottom: 9em;
+}
+.slide--3__block.second {
+  padding-left: 0;
+  margin-bottom: 10em;
+}
+.slide--3__block .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0.6em;
+  background-color: var(--dark-c);
+}
+.slide--3__block.second .line {
+  display: none;
+}
+.slide--3__block .subblock {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.slide--3__block.second .subblock:nth-child(2) {
+  margin-bottom: 2em;
+}
+.slide--3__block p.text {
+  font-size: 2.9em;
+  line-height: 1.1em;
+  width: max-content;
+}
+.slide--3__block.first p.text {
+  margin-bottom: 0.7em;
+}
+.slide--3__block p.author {
+  font-size: 3.2em;
+  line-height: 1.1em;
+  font-weight: 700;
+}
+.slide--3__block.third p.author {
+  margin-bottom: 0.6em;
+}
+.slide--3__block p.number {
+  font-size: 14em;
+}
+/*#endregion sl3*/
+
+/*#region sl4*/
+.slide--4 {
+  padding-left: 0;
+}
+.slide--4__left {
+  position: relative;
+  width: 55.5%;
+}
+.slide--4__left img {
+  object-fit: contain;
+  object-position: top;
+}
+.slide--4__left-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(calc(-50% - 7em));
+  width: max-content;
+  padding: 10em 5em 5em;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.slide--4__left-text h3 {
+  font-size: 4.4em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+.slide--4__left-text h2 {
+  font-size: 8em;
+  line-height: 1.1em;
+  margin-bottom: 0.3em;
+}
+.slide--4__left-text p {
+  font-size: 3em;
+  line-height: 1.1em;
+  font-weight: 700;
+}
+
+.slide--4__right {
+  position: relative;
+  width: 44.5%;
+}
+.slide--4__right .up-wrapper, .slide--4__right .bottom-wrapper {
+  width: 60em;
+  margin: 0 auto;
+}
+.slide--4__right img.doctor {
+  position: absolute;
+  top: 20.5em;
+  left: -21em;
+  width: 40em;
+  height: auto;
+}
+.slide--4__right-main {
+  margin-top: 20.5em;
+  margin-left: 23em;
+}
+.slide--4__right-main p.author {
+  font-size: 3.8em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+.slide--4__right-main p.text {
+  font-size: 2.8em;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin-bottom: 1.45em;
+}
+.slide--4__right-main .line {
+  width: 100%;
+  height: 0.55em;
+  background-color: var(--dark-c);
+  margin-bottom: 3.5em;
+}
+.slide--4__right-main h3 {
+  font-size: 4.2em;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.slide--4__right-main .text-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 3em;
+}
+.slide--4__right-main .text-wrapper img.women {
+  width: 15em;
+}
+.slide--4__right-main .text-wrapper p.text {
+  font-weight: 400;
+  width: max-content;
+  min-width: max-content;
+}
+/*#endregion sl4*/
+
+/*#region sl5*/
+.slide--5__left {
+  position: absolute;
+  left: 10em;
+  width: 50%;
+  min-width: max-content;
+  margin-top: 8em;
+}
+.slide--5__left .content-wrapper {
+  position: relative;
+  left: 0.9em;
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--5__left h2 {
+  font-size: 10em;
+  line-height: 1.1em;
+  margin-bottom: 0.4em;
+}
+.slide--5__left h3 {
+  font-size: 4.9em;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.slide--5__left .line-horizontal {
+  width: 65em;
+  height: 0.5em;
+  background-color: var(--dark-c);
+  margin-bottom: 9.5em;
+}
+.slide--5__left .text-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+.slide--5__left .text-wrapper p.number {
+  font-size: 11.5em;
+  width: 1.9em;
+}
+.slide--5__left .text-wrapper .line-vertical {
+  height: 10em;
+  width: 0.5em;
+  background-color: var(--dark-c);
+}
+.slide--5__left .text-wrapper p.text {
+  font-size: 4.35em;
+  line-height: 1.1em;
+}
+.slide--5__right-wrapper {
+  position: absolute;
+  right: 10em;
+  width: 50%;
+  min-width: max-content;
+}
+.slide--5__right {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4em;
+  width: 101em;
+  min-width: 101em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
+}
+.slide--5__right-block {
+  width: 31.5em;
+  aspect-ratio: 1 / 1;
+}
+/*#endregion sl5*/
+
+/*#region sl6*/
+.slide--6 {
+  padding-left: 0;
+}
+.slide--6__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3em;
+  padding-bottom: 3em;
+  width: 75em;
+  height: 110em;
+  background-image: url(../images/sl6-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide--6__logo-wrapper img {
+  width: 25em;
+  margin-bottom: 3.5em;
+}
+.slide--6__logo-wrapper img:last-child {
+  margin-bottom: 0;
+}
+
+.slide--6__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 85em);
+  margin-top: 9em;
+  margin-left: 6.7em
+}
+.slide--6__right .text-wrapper h2 {
+  width: max-content;
+  font-size: 7em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+.slide--6__right .text-wrapper h3 {
+  width: max-content;
+  font-size: 3.7em;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.slide--6__right .text-wrapper p {
+  width: max-content;
+  font-size: 2.8em;
+  line-height: 1.1em;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+.slide--6__right .article-wrapper img {
+  height: auto;
+  width: 23.6em;
+  min-width: 23.6em;
+  margin-bottom: 3em;
+}
+.slide--6__right .article-wrapper img:last-child {
+  margin-bottom: 0;
+}
+.slide--6__right .up-wrapper {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 8em;
+  gap: 3em;
+}
+
+.slide--6__right .bottom-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+.slide--6__right-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+.slide--6__right-block p.number {
+  font-size: 8.3em;
+  font-weight: 700;
+}
+.slide--6__right-block p.text {
+  font-size: 2.8em;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+/*#endregion sl6*/
+
+/*#region sl7*/
+.slide--7 {
+  padding: 3em 8em 0 8em;
+}
+.slide--7 h2 {
+  font-size: 11em;
+  margin-bottom: 0.3em;
+}
+.slide--7 h3 {
+  font-size: 5em;
+  font-weight: 700;
+  margin-bottom: 0.7em;
+}
+.slide--7__icons {
+  position: relative;
+  left: -1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2em;
+  margin-bottom: 6em;
+}
+.slide--7__icon {
+  min-width: max-content;
+}
+.slide--7__icon img {
+  height: 16em;
+  width: auto;
+}
+
+.slide--7__blocks {
+  position: relative;
+  left: -8em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: calc(100% + 16em);
+}
+.slide--7__block {
+  position: relative;
+  width: 16.5%;
+}
+.slide--7__block img {
+  height: 32em;
+  width: auto;
+  margin: 0 auto;
+}
+.slide--7__block-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  width: 22em;
+  color: var(--light-c);
+}
+.slide--7__block.first .slide--7__block-text,
+.slide--7__block.sixth .slide--7__block-text {
+  color: var(--dark-c);
+}
+.slide--7__block-text .line {
+  height: 10em;
+  width: 0.5em;
+  min-width: 0.5em;
+  background-color: var(--light-c);
+}
+.slide--7__block.first .slide--7__block-text .line,
+.slide--7__block.sixth .slide--7__block-text .line {
+  background-color: var(--dark-c);
+}
+.slide--7__block-text p {
+  width: max-content;
+  font-size: 3em;
+  line-height: 1.1em;
+  font-weight: 700;
+}
+
+.slide--7 p.note {
+  position: absolute;
+  top: 39em;
+  right: 3em;
+  font-size: 2.5em;
+}
+/*#endregion sl7*/
+
+/*#region sl8*/
+.slide--8 {
+  padding-left: 0;
+}
+
+.slide--8__left {
+  width: 66%;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+}
+.slide--8__left img {
+  object-position: right;
+}
+.slide--8__right {
+  width: 34%;
+  margin-top: 17em;
+}
+.slide--8__right-text {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--8__right h2 {
+  font-size: 8em;
+  line-height: 1.05em;
+  margin-bottom: 0.5em;
+}
+.slide--8__right h2 strong {
+  font-weight: 900;
+}
+.slide--8__right .line {
+  width: 100%;
+  height: 0.7em;
+  margin-bottom: 4em;
+  background-color: var(--dark-c);
+}
+.slide--8__right p {
+  font-size: 4.5em;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+/*#endregion sl8*/
+
+/*#region sl9*/
+.slide--9 {
+  padding-top: 3em;
+  padding-left: 6.5em;
+  padding-right: 6.5em;
+}
+.slide--9 h2 {
+  font-weight: 900;
+  font-size: 8em;
+  margin-bottom: 0.7em;
+}
+
+.slide--9__stages {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% + 1em);
+}
+.slide--9__stage {
+  position: relative;
+  width: 20%;
+  z-index: 1;
+}
+.slide--9__stage::after {
+  content: '';
+  position: absolute;
+  top: 24em;
+  left: 0;
+  width: 10em;
+  height: 58em;
+  background: linear-gradient(180deg, rgba(234,234,234,1) 80%, rgba(255,255,255,1) 100%);
+  z-index: -1;
+}
+.slide--9__stage-up {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+.slide--9__stage img {
+  width: 10em;
+}
+.slide--9__stage p, .slide--9__stage ul li {
+  width: max-content;
+}
+.slide--9__stage p.who {
+  font-size: 3.6em;
+  margin-bottom: 0.3em;
+}
+.slide--9__stage p.age {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.slide--9__stage ul li {
+  position: relative;
+  font-weight: 700;
+  font-size: 2.3em;
+  line-height: 1.1em;
+  padding-left: 0.6em;
+}
+.slide--9__stage ul li::before {
+  content: '';
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  height: 0.25em;
+  width: 0.25em;
+  background-color: var(--dark-c);
+  border-radius: 50%;
+}
+
+.slide--9__products {
+  position: relative;
+  width: calc(100% + 1em);
+  height: 55em;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+}
+.slide--9__product-column {
+  position: relative;
+  width: 20%;
+  height: 100%;
+}
+.slide--9__product {
+  position: absolute;
+  left: 0;
+}
+.slide--9__product img.product {
+  position: relative;
+  z-index: 1;
+}
+.slide--9__product p {
+  position: absolute;
+  font-size: 3em;
+  font-weight: 700;
+  width: max-content;
+}
+
+.slide--9__product.first {
+  top: 1em;
+}
+.slide--9__product.seventh {
+  top: 43em;
+  display: block;
+}
+.slide--9__product.first img.product,
+.slide--9__product.seventh img.product {
+  height: 12em;
+  width: auto;
+}
+.slide--9__product.first img.product {
+  margin-left: 0.5em;
+}
+.slide--9__product.seventh img.product {
+  margin-left: 3em;
+}
+.slide--9__product.first p,
+.slide--9__product.seventh p {
+  left: 3.5em;
+}
+.slide--9__product.first p {
+  top: 1em;
+}
+.slide--9__product.seventh p {
+  top: 1.2em;
+}
+
+.slide--9__product.second {
+  top: 11em;
+  left: 0;
+  width: 120%;
+}
+.slide--9__product.second img.product {
+  height: 13em;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: -2em;
+}
+.slide--9__product.second p {
+  top: 1.5em;
+  left: 50%;
+  transform: translateX(calc(-50% + 4em));
+}
+
+.slide--9__product.third {
+  top: 11em;
+  width: 100%;
+}
+.slide--9__product.third img.product {
+  height: 13em;
+  width: auto;
+  margin-left: 3em;
+}
+.slide--9__product.third p {
+  top: 1.5em;
+  left: 3.6em;
+}
+
+.slide--9__product.fourth {
+  top: 24em;
+  width: 100%;
+}
+.slide--9__product.fourth img.product {
+  height: 13em;
+  width: auto;
+  margin-left: 2em;
+}
+.slide--9__product.fourth p {
+  top: 1.5em;
+  left: 2.6em;
+}
+
+.slide--9__product.fifth {
+  top: 30em;
+  width: 100%;
+}
+.slide--9__product.fifth img.product {
+  height: 7em;
+  width: auto;
+  margin-left: 1em;
+}
+.slide--9__product.fifth p {
+  top: -0.5em;
+  left: 3.5em;
+}
+
+.slide--9__product.sixth {
+  top: 39em;
+  width: 100%;
+}
+.slide--9__product.sixth img.product {
+  height: 8.5em;
+  width: auto;
+}
+.slide--9__product.sixth p {
+  top: 0;
+  left: 10.5em;
+}
+
+.slide--9__products-arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.slide--9__products-arrows img.arrow {
+  position: absolute;
+  padding: 0;
+  object-fit: fill;
+  transform-origin: left center;
+}
+.slide--9__products-arrows img.arrow.first,
+.slide--9__products-arrows img.arrow.seventh {
+  left: 8em;
+  height: 4em;
+  width: calc(100% - 10em);
+}
+.slide--9__products-arrows img.arrow.first {
+  top: 7em;
+}
+.slide--9__products-arrows img.arrow.seventh {
+  top: 50em;
+}
+.slide--9__products-arrows img.arrow.second {
+  top: 19em;
+  left: 0;
+  height: 4em;
+  width: calc(47% + 13em);
+}
+.slide--9__products-arrows img.arrow.third {
+  top: 19em;
+  right: 2em;
+  height: 4em;
+  width: calc(44% - 17em);
+}
+.slide--9__products-arrows img.arrow.fourth {
+  top: 32em;
+  left: 23.5%;
+  height: 4em;
+  width: calc(20% - 8em);
+}
+.slide--9__products-arrows img.arrow.fifth {
+  top: 32em;
+  left: 45.5%;
+  height: 4em;
+  width: calc(20% - 0.5em);
+}
+.slide--9__products-arrows img.arrow.sixth {
+  top: 43em;
+  right: 2em;
+  height: 4em;
+  width: 23%;
+}
+/*#endregion sl9*/
+
+/*#region sl10*/
+.slide--10 {
+  padding-left: 0;
+  padding-right: 8em;
+}
+.slide--10 .slide__content > img.texture {
+  position: absolute;
+  top: 20em;
+  width: 11%;
+  height: 72em;
+  left: 50%;
+  transform: translateX(calc(-50% - 5em));
+}
+.slide--10__bottle {
+  width: 50%;
+  height: 100vh;
+}
+.slide--10__bottle img {
+  object-position: top;
+}
+.slide--10__text {
+  width: 50%;
+  padding-left: 7%;
+  margin-top: 21em;
+}
+.slide--10__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--10__text h2 {
+  font-size: 13em;
+  margin-bottom: 0.5em;
+}
+.slide--10__text h3 {
+  font-size: 4.9em;
+  font-weight: 700;
+  margin-bottom: 1.2em;
+}
+.slide--10__text-numbers {
+  position: relative;
+  left: -3em;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.slide--10__text-numbers p.number {
+  font-size: 25em;
+}
+.slide--10__text-numbers .line {
+  width: 0.5em;
+  height: 21em;
+  background-color: var(--dark-c);
+}
+.slide--10__text-numbers p.description {
+  font-size: 3.9em;
+  line-height: 1.1em;
+}
+.slide--10__text-numbers p.description.first {
+  margin-bottom: 0.5em;
+}
+/*#endregion sl10*/
+
+/*#region sl11*/
+.slide--11 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide--11__title {
+  position: relative;
+  left: -10em;
+  width: calc(100% + 20em);
+  align-items: flex-end;
+  margin-bottom: 5em;
+}
+.slide--11__title img {
+  width: 23em;
+}
+.slide--11__title-text {
+  width: calc(100% - 23em);
+}
+.slide--11__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--11__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(123, 199, 207);
+}
+
+.slide--11__bottles {
+  justify-content: space-around;
+}
+.slide--11__bottle p {
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--11__bottle .lines {
+  margin-bottom: 1.5em;
+}
+.slide--11__bottle .horizontal {
+  width: 21em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--11__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--11__bottle.first .vertical {
+  height: 3em;
+}
+.slide--11__bottle.second .vertical {
+  height: 8em;
+}
+.slide--11__bottle.third .vertical {
+  height: 3em;
+}
+.slide--11__bottle.fourth .vertical {
+  height: 3em;
+}
+.slide--11__bottle.fifth .vertical {
+  height: 13em;
+}
+.slide--11__bottle.sixth .vertical {
+  height: 2em;
+}
+.slide--11__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--11__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--11__bottle.first img {
+  height: 60em;
+}
+.slide--11__bottle.second img {
+  height: 55em;
+}
+.slide--11__bottle.third img {
+  height: 61em;
+}
+.slide--11__bottle.fourth img {
+  height: 61em;
+}
+.slide--11__bottle.fifth img {
+  height: 47em;
+}
+.slide--11__bottle.sixth img {
+  height: 63em;
+}
+/*#endregion sl11*/
+
+/*#region sl12*/
+.slide--12 {
+  padding-left: 0;
+  padding-right: 8em;
+}
+.slide--12 .slide__content > img.texture {
+  position: absolute;
+  top: 20em;
+  width: 10%;
+  height: 72em;
+  left: 50%;
+  transform: translateX(calc(-50% - 4em));
+}
+.slide--12__left {
+  width: 50%;
+  height: 100vh;
+}
+.slide--12__left img {
+  object-position: top;
+}
+.slide--12__text {
+  width: 50%;
+  padding-left: 6.5%;
+  margin-top: 23em;
+}
+.slide--12__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--12__text h2 {
+  font-size: 13em;
+  margin-bottom: 0.1em;
+}
+.slide--12__text h3 {
+  font-weight: 700;
+  font-size: 4em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+.slide--12__text h4 {
+  font-size: 3.1em;
+  letter-spacing: -0.015em;
+  line-height: 1.1em;
+  margin-bottom: 1.1em;
+}
+.slide--12__text p {
+  font-size: 2.1em;
+  width: max-content;
+  color: var(--light-c);
+  background-color: rgb(123, 199, 207);
+  letter-spacing: -0.01em;
+  padding: 0.2em 0.5em;
+  margin-bottom: 2em;
+}
+.slide--12__blocks {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.slide--12__block {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.slide--12__block img {
+  width: 16em;
+}
+.slide--12__block h5 {
+  font-weight: 700;
+  font-size: 2.8em;
+  line-height: 1.1em;
+  margin-bottom: 0.3em;
+}
+.slide--12__block p {
+  width: unset;
+  color: var(--dark-c);
+  background-color: transparent;
+  letter-spacing: unset;
+  padding: 0;
+  font-size: 2.3em;
+  margin-bottom: 0;
+}
+
+.slide--12 p.note {
+  position: absolute;
+  font-size: 2.2em;
+  top: 45em;
+  right: 3.5em;
+}
+/*#endregion sl12*/
+
+/*#region sl13*/
+.slide--13 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 6em;
+  padding-right: 8em;
+}
+.slide--13__title {
+  position: relative;
+  left: -6em;
+  width: calc(100% + 14em);
+  align-items: flex-end;
+  margin-bottom: 5em;
+}
+.slide--13__title img {
+  width: 23em;
+}
+.slide--13__title-text {
+  width: calc(100% - 23em);
+}
+.slide--13__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--13__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(123, 199, 207);
+}
+
+.slide--13__bottles {
+  justify-content: space-around;
+}
+.slide--13__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--13__bottle .lines {
+  margin-bottom: 1.5em;
+}
+.slide--13__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--13__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--13__bottle.first .vertical {
+  height: 10em;
+}
+.slide--13__bottle.second .vertical {
+  height: 37.8em;
+}
+.slide--13__bottle.third .vertical {
+  height: 37.8em;
+}
+.slide--13__bottle.fourth .vertical {
+  height: 22.5em;
+}
+.slide--13__bottle.fifth .vertical {
+  height: 18.2em;
+}
+.slide--13__bottle.sixth .vertical {
+  height: 19.25em;
+}
+.slide--13__bottle.seventh .vertical {
+  height: 17em;
+}
+.slide--13__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--13__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--13__bottle.first img {
+  height: 52em;
+}
+.slide--13__bottle.second img {
+  height: 27em;
+}
+.slide--13__bottle.third img {
+  height: 27.5em;
+}
+.slide--13__bottle.fourth img {
+  height: 37em;
+}
+.slide--13__bottle.fifth img {
+  height: 37em;
+}
+.slide--13__bottle.sixth img {
+  height: 44em;
+}
+.slide--13__bottle.seventh img {
+  height: 52em;
+}
+/*#endregion sl13*/
+
+/*#region sl14*/
+.slide--14 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide--14__title {
+  position: relative;
+  left: -10em;
+  width: calc(100% + 20em);
+  align-items: flex-end;
+  margin-bottom: 5em;
+}
+.slide--14__title img {
+  width: 23em;
+}
+.slide--14__title-text {
+  width: calc(100% - 23em);
+}
+.slide--14__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--14__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(123, 199, 207);
+}
+
+.slide--14__bottles {
+  justify-content: space-around;
+}
+.slide--14__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.2em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--14__bottle .lines {
+  margin-bottom: 1.5em;
+}
+.slide--14__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--14__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--14__bottle.first .vertical {
+  height: 19em;
+}
+.slide--14__bottle.second .vertical {
+  height: 16.5em;
+}
+.slide--14__bottle.third .vertical {
+  height: 19em;
+}
+.slide--14__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--14__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--14__bottle.first img {
+  height: 44em;
+}
+.slide--14__bottle.second img {
+  height: 44em;
+}
+.slide--14__bottle.third img {
+  height: 48em;
+}
+/*#endregion sl14*/
+
+/*#region sl15*/
+.slide--15 {
+  padding-left: 0;
+  padding-right: 3em;
+}
+.slide--15 .slide__content > img.texture {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 95em;
+  left: 50%;
+  transform: translateX(calc(-50% - 22em));
+}
+.slide--15__left {
+  width: 41%;
+  height: 100vh;
+}
+.slide--15__left img {
+  object-position: top;
+}
+.slide--15__text {
+  width: 59%;
+  padding-left: 3.5%;
+  margin-top: 17em;
+}
+.slide--15__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--15__text h2 {
+  font-size: 12.5em;
+  margin-bottom: 0.1em;
+}
+.slide--15__text h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.65em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--15__bottom {
+  display: flex;
+  gap: 2em;
+}
+.slide--15__block {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+.slide--15__block.first {
+  margin-bottom: 5em;
+}
+.slide--15__block img {
+  width: 17em;
+}
+.slide--15__block p.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.slide--15__block p.title span.num {
+  font-size: 6em;
+}
+.slide--15__block p.title span.description {
+  font-size: 2.7em;
+  line-height: 1.1em;
+}
+.slide--15__block p.text {
+  font-size: 2.7em;
+  line-height: 1.1em;
+}
+
+.slide--15__skins {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 6em;
+}
+.slide--15__skin img {
+  margin: 0 auto 1em;
+  width: 11em;
+  height: auto;
+}
+.slide--15__skin p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.1em;
+}
+
+.slide--15__right h4 {
+  font-size: 3.2em;
+  line-height: 1.1em;
+  background-color: rgb(0, 145, 74);
+  color: var(--light-c);
+  padding: 0.2em 0.4em;
+  margin-bottom: 0.5em;
+}
+.slide--15__right ul {
+  list-style: disc;
+  position: relative;
+  left: 3em;
+}
+.slide--15__right ul li {
+  font-weight: 700;
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+}
+.slide--15__right ul li:last-child {
+  margin-bottom: 0;
+}
+/*#endregion sl15*/
+
+/*#region sl16*/
+.slide--16 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 6.5em;
+}
+.slide--16__title {
+  position: relative;
+  left: -6.5em;
+  width: calc(100% + 16.5em);
+  align-items: flex-end;
+  margin-bottom: 5em;
+}
+.slide--16__title img {
+  width: 23em;
+}
+.slide--16__title-text {
+  width: calc(100% - 23em);
+}
+.slide--16__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--16__title h3 {
+  padding: 0.3em 1em;
+  font-size: 3.9em;
+  color: var(--light-c);
+  background-color: rgb(0, 145, 74);
+}
+
+.slide--16__bottles {
+  justify-content: space-around;
+}
+.slide--16__bottle.third {
+  margin-left: -3em;
+}
+.slide--16__bottle.fourth {
+  margin-left: -5em;
+  margin-right: 1em;
+}
+.slide--16__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.2em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+.slide--16__bottle-wrapper {
+  position: relative;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.slide--16__bottle-wrapper.first {
+  width: 48%;
+}
+.slide--16__bottle-wrapper.second {
+  width: 10%;
+}
+.slide--16__bottle-wrapper.third {
+  width: 33%;
+}
+.slide--16__bottle-wrapper.fourth {
+  width: 10%;
+}
+.slide--16__bottle-wrapper .decorator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 3em;
+  width: 97%;
+  border: solid 0.5em rgb(0, 145, 74);
+  border-top: none;
+}
+.slide--16__bottle-wrapper .decorator-text {
+  position: absolute;
+  left: 50%;
+  bottom: -1.5em;
+  transform: translateX(-50%);
+  width: max-content;
+  text-align: center;
+  font-size: 2.6em;
+  color: rgb(0, 145, 74);
+}
+.slide--16__bottle-wrapper.fourth .decorator-text {
+  bottom: -2.5em;
+}
+
+.slide--16__bottle .lines {
+  margin-bottom: 1.5em;
+}
+.slide--16__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--16__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--16__bottle.first .vertical {
+  height: 8.5em;
+}
+.slide--16__bottle.second .vertical {
+  height: 5em;
+}
+.slide--16__bottle.third .vertical {
+  height: 7.5em;
+}
+.slide--16__bottle.fourth .vertical {
+  height: 7em;
+}
+.slide--16__bottle.fifth .vertical {
+  height: 7.5em;
+}
+.slide--16__bottle.sixth .vertical {
+  height: 10.5em;
+}
+.slide--16__bottle.seventh .vertical {
+  height: 14.5em;
+}
+.slide--16__bottle.eight .vertical {
+  height: 10.5em;
+}
+.slide--16__bottle.nineth .vertical {
+  height: 16.5em;
+}
+.slide--16__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--16__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--16__bottle.first img {
+  height: 46em;
+}
+.slide--16__bottle.second img {
+  height: 44em;
+  margin-bottom: -1em;
+}
+.slide--16__bottle.third img {
+  height: 46em;
+  margin-bottom: 1em;
+}
+.slide--16__bottle.fourth img {
+  height: 40em;
+  margin-bottom: 1em;
+}
+.slide--16__bottle.fifth img {
+  height: 46em;
+  margin-bottom: 0.5em;
+}
+.slide--16__bottle.sixth img {
+  height: 37em;
+}
+.slide--16__bottle.seventh img {
+  height: 42em;
+  margin-bottom: -2em;
+}
+.slide--16__bottle.eight img {
+  height: 37em;
+}
+.slide--16__bottle.nineth img {
+  height: 35em;
+  margin-bottom: 3em;
+}
+/*#endregion sl16*/
+
+/*#region sl17*/
+.slide--17 {
+  padding-left: 0;
+  padding-right: 3em;
+}
+.slide--17 .slide__content > img.texture {
+  position: absolute;
+  top: 15em;
+  width: 10%;
+  height: 80em;
+  left: 50%;
+  transform: translateX(calc(-50% - 25em));
+}
+.slide--17__left {
+  width: 38%;
+  height: 100vh;
+}
+.slide--17__text {
+  width: 62%;
+  padding-left: 3.5%;
+  margin-top: 17em;
+}
+.slide--17__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--17__text h2 {
+  font-size: 10.5em;
+  margin-bottom: 0.2em;
+}
+
+.slide--17__content {
+  display: flex;
+  gap: 2em;
+}
+.slide--17__block {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-bottom: 1.5em;
+}
+.slide--17__block.third {
+  margin-bottom: 0;
+}
+.slide--17__block img {
+  width: 17em;
+}
+.slide--17__block p.title {
+  font-size: 2.8em;
+  line-height: 1.05em;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+.slide--17__block p.description {
+  font-size: 2.65em;
+  line-height: 1.1em;
+}
+
+.slide--17__skins {
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+  margin-bottom: 10em;
+}
+.slide--17__skin img {
+  margin: 0 auto 1em;
+  width: 14em;
+  height: auto;
+}
+.slide--17__skin p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.35em;
+}
+
+.slide--17__right ul {
+  list-style: disc;
+  position: relative;
+  left: 4em;
+}
+.slide--17__right ul li {
+  font-weight: 700;
+  font-size: 2.8em;
+  line-height: 1.15em;
+  margin-bottom: 0.5em;
+}
+.slide--17__right ul li:last-child {
+  margin-bottom: 0;
+}
+
+.slide--17 p.note {
+  position: absolute;
+  font-size: 1.6em;
+  top: 61.5em;
+  right: 4em;
+}
+/*#endregion sl17*/
+
+/*#region sl18*/
+.slide--18 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 7em;
+  padding-right: 7em;
+}
+.slide--18__title {
+  position: relative;
+  left: -7em;
+  width: calc(100% + 14em);
+  align-items: flex-end;
+  margin-bottom: 5.5em;
+}
+.slide--18__title img {
+  width: 23em;
+}
+.slide--18__title-text {
+  width: calc(100% - 23em);
+}
+.slide--18__title h2 {
+  font-size: 12em;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--18__title h3 {
+  padding: 0.3em 1em;
+  font-size: 3.9em;
+  color: var(--light-c);
+  background-color: rgb(179, 185, 201);
+}
+
+.slide--18__bottles {
+  justify-content: space-around;
+}
+.slide--18__bottle p,
+.slide--18__bottle-subwrapper p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.1em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+.slide--18__bottle-wrapper {
+  position: relative;
+  justify-content: space-around;
+}
+.slide--18__bottle-wrapper.first {
+  width: 30%;
+}
+.slide--18__bottle-wrapper.second {
+  width: 70%;
+}
+.slide--18__bottle-wrapper .decorator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 3em;
+  width: 98%;
+  border: solid 0.5em var(--light-c);
+  border-top: none;
+}
+.slide--18__bottle-wrapper .decorator-text {
+  position: absolute;
+  left: 50%;
+  bottom: -1.5em;
+  transform: translateX(-50%);
+  width: max-content;
+  text-align: center;
+  font-size: 2.6em;
+  color: var(--light-c)
+}
+.slide--18__bottle-wrapper img.icon {
+  width: 7em;
+  height: auto;
+  position: absolute;
+}
+.slide--18__bottle-wrapper.first img.icon {
+  top: 28em;
+}
+.slide--18__bottle-subwrapper {
+  width: 50%;
+}
+
+.slide--18__bottle.fifth,
+.slide--18__bottle.sixth {
+  position: relative;
+  top: 2em;
+}
+
+.slide--18__bottle .lines,
+.slide--18__bottle-subwrapper .lines {
+  margin-bottom: 1.5em;
+}
+.slide--18__bottle .horizontal,
+.slide--18__bottle-subwrapper .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--18__bottle .vertical,
+.slide--18__bottle-subwrapper .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--18__bottle.first .vertical {
+  height: 5.5em;
+}
+.slide--18__bottle.second .vertical {
+  height: 8.5em;
+}
+.slide--18__bottle-subwrapper .vertical {
+  height: 14.5em;
+}
+.slide--18__bottle.fifth .vertical,
+.slide--18__bottle.sixth .vertical {
+  height: 15.5em;
+}
+
+.slide--18__bottle .circle,
+.slide--18__bottle-subwrapper .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--18__bottle-subwrapper-content {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  bottom: -10em;
+}
+
+.slide--18__bottle.third,
+.slide--18__bottle.fourth {
+  position: relative;
+}
+.slide--18__bottle.third p,
+.slide--18__bottle.fourth p {
+  position: absolute;
+  top: -2em;
+  font-weight: 700;
+  font-size: 2.2em;
+  text-align: center;
+  width: 100%;
+}
+.slide--18__bottle.third img.icon,
+.slide--18__bottle.fourth img.icon {
+  height: auto;
+  top: -12em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide--18__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--18__bottle.first img {
+  height: 46em;
+}
+.slide--18__bottle.second img {
+  height: 39em;
+}
+.slide--18__bottle.third img {
+  height: 28em;
+}
+.slide--18__bottle.fourth img {
+  height: 28em;
+}
+.slide--18__bottle.fifth img {
+  height: 30em;
+  position: relative;
+  bottom: -9.5em;
+}
+.slide--18__bottle.fifth img.icon {
+  position: absolute;
+  height: auto;
+  top: 28.5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide--18__bottle.sixth img {
+  height: 28em;
+  position: relative;
+  bottom: -9.5em;
+}
+.slide--18__bottle.sixth img.icon {
+  position: absolute;
+  width: 5.5em;
+  height: auto;
+  top: 29em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*#endregion sl18*/
+
+/*#region sl19*/
+.slide--19 {
+  padding-left: 0;
+  padding-right: 3em;
+}
+.slide--19 .slide__content > img.texture {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 97em;
+  left: 50%;
+  transform: translateX(calc(-50% - 25em));
+}
+.slide--19__left {
+  width: 38%;
+  height: 100vh;
+}
+.slide--19__left img {
+  object-position: top;
+}
+.slide--19__text {
+  width: 62%;
+  padding-left: 3%;
+  margin-top: 17em;
+}
+.slide--19__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--19__text h2 {
+  font-size: 9.5em;
+  margin-bottom: 0.1em;
+}
+.slide--19__text h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.9em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+
+.slide--19__bottom {
+  display: flex;
+  gap: 3em;
+}
+.slide--19__block {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-bottom: 1em;
+}
+.slide--19__block.third {
+  margin-bottom: 0;
+}
+.slide--19__block img {
+  width: 17em;
+  aspect-ratio: 1 / 1;
+}
+.slide--19__block p.title {
+  font-size: 2.7em;
+  font-weight: 700;
+  line-height: 1.15em;
+  margin-bottom: 0.15em;
+}
+.slide--19__block p.text {
+  font-size: 2.6em;
+  line-height: 1.1em;
+}
+
+.slide--19__skins {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 7em;
+}
+.slide--19__skin {
+  display: flex;
+  gap: 1em;
+}
+.slide--19__skin img {
+  margin: 0 auto 1em;
+  width: 11em;
+  height: auto;
+}
+.slide--19__skin p {
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.slide--19__right h4 {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 5.5em;
+}
+.slide--19__right h4 .line {
+  width: 0.5em;
+  height: 15em;
+  background-color: var(--dark-c);
+}
+.slide--19__right h4 .text {
+  font-size: 3.1em;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+.slide--19__right h5 {
+  font-size: 3.3em;
+  font-weight: 600;
+  margin-bottom: 0.1em;
+}
+
+.slide--19__numbers {
+  display: flex;
+  align-items: center;
+  gap: 1.1em;
+}
+.slide--19__numbers p.number {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 700;
+}
+.slide--19__numbers p.number span.num {
+  font-size: 11em;
+}
+.slide--19__numbers p.number span.text {
+  font-size: 4.2em;
+}
+.slide--19__numbers p.description {
+  font-size: 3.1em;
+  font-weight: 700;
+}
+
+.slide--19 p.note {
+  position: absolute;
+  font-size: 2.3em;
+  top: 44em;
+  right: 3.5em;
+}
+/*#endregion sl19*/
+
+/*#region sl20*/
+.slide--20 {
+  padding-left: 0;
+  padding-right: 3em;
+}
+.slide--20 .slide__content > img.texture {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 97em;
+  left: 50%;
+  transform: translateX(calc(-50% - 25em));
+}
+.slide--20__left {
+  width: 38%;
+  height: 100vh;
+}
+.slide--20__text {
+  width: 62%;
+  padding-left: 4%;
+  margin-top: 5em;
+}
+.slide--20__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--20__text h2 {
+  font-size: 9.5em;
+  margin-bottom: 0.1em;
+}
+.slide--20__text h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.9em;
+  line-height: 1.1em;
+  margin-bottom: 0.7em;
+}
+
+.slide--20__bottom {
+  display: flex;
+  gap: 5em;
+}
+.slide--20__blocks {
+  position: relative;
+  padding-left: 8em;
+}
+.slide--20__decorator {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+.slide--20__decorator .line {
+  height: 3.5em;
+  border: solid 0.3em var(--dark-c);
+  border-bottom: none;
+}
+.slide--20__decorator p {
+  font-size: 2.5em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+.slide--20__decorator.first {
+  top: 17.5em;
+  left: -18em;
+}
+.slide--20__decorator.first .line {
+  width: 46em;
+}
+.slide--20__decorator.second {
+  top: 48.8em;
+  left: -3.45em;
+}
+.slide--20__decorator.second .line {
+  width: 15.6em;
+}
+
+.slide--20__block {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-bottom: 1em;
+}
+.slide--20__block.third {
+  margin-bottom: 2em;
+}
+.slide--20__block.fourth {
+  margin-bottom: 0;
+}
+.slide--20__block img {
+  width: 14em;
+  aspect-ratio: 1 / 1;
+}
+.slide--20__block p.title {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1.15em;
+  margin-bottom: 0.15em;
+}
+.slide--20__block p.text {
+  font-size: 2.5em;
+  line-height: 1.1em;
+}
+
+.slide--20__skins {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 2.1em;
+}
+.slide--20__skin img {
+  margin: 0 auto 1em;
+  width: 11em;
+  height: auto;
+}
+.slide--20__skin p {
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.slide--20__right h4 {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 2.5em;
+}
+.slide--20__right h4 .line {
+  width: 0.4em;
+  height: 13em;
+  background-color: var(--dark-c);
+}
+.slide--20__right h4 .text {
+  font-size: 3.1em;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+.slide--20__right h5 {
+  font-size: 3.3em;
+  line-height: 1.1em;
+  padding: 0.2em 0.4em;
+  background-color: rgb(212, 40, 36);
+  color: var(--light-c);
+  margin-bottom: 0.7em;
+}
+
+.slide--20__numbers-block {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.slide--20__numbers-block.first {
+  margin-bottom: 1em;
+}
+.slide--20__numbers-block p.number {
+  font-size: 8.5em;
+  width: 2.3em;
+}
+.slide--20__numbers-block p.text {
+  font-size: 2.8em;
+  line-height: 1.05em;
+}
+.slide--20__numbers-block.second {
+  position: relative;
+}
+.slide--20__numbers-block.second::before {
+  content: 'ДО';
+  position: absolute;
+  top: 1em;
+  left: 0;
+  font-size: 2.1em;
+  font-family: inherit;
+}
+
+.slide--20 p.note {
+  position: absolute;
+  font-size: 1.6em;
+  top: 62.5em;
+  right: 4.5em;
+}
+/*#endregion sl20*/
+
+/*#region sl21*/
+.slide--21 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide--21__title {
+  position: relative;
+  left: -10em;
+  width: calc(100% + 20em);
+  align-items: flex-end;
+  margin-bottom: 5em;
+}
+.slide--21__title img {
+  width: 23em;
+}
+.slide--21__title-text {
+  width: calc(100% - 23em);
+}
+.slide--21__title h2 {
+  font-size: 12em;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--21__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(212, 40, 36);
+}
+
+.slide--21__bottles {
+  justify-content: space-around;
+}
+.slide--21__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.2em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--21__bottle .lines {
+  margin-bottom: 3em;
+}
+.slide--21__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--21__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--21__bottle.first .vertical {
+  height: 5.5em;
+}
+.slide--21__bottle.second .vertical {
+  height: 11em;
+}
+.slide--21__bottle.third .vertical {
+  height: 13.5em;
+}
+.slide--21__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--21__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--21__bottle.first img {
+  height: 56em;
+}
+.slide--21__bottle.second img {
+  height: 42em;
+}
+.slide--21__bottle.third img {
+  height: 41em;
+}
+
+.slide--21__bottle.second img.icon {
+  height: 8em;
+  margin-bottom: 3em;
+}
+.slide--21__bottle.third img.icon {
+  height: 6em;
+  margin-bottom: 3em;
+}
+/*#endregion sl21*/
+
+/*#region sl22*/
+.slide--22 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide--22__title {
+  position: relative;
+  left: -10em;
+  width: calc(100% + 20em);
+  align-items: flex-end;
+  margin-bottom: 5em;
+}
+.slide--22__title img {
+  width: 23em;
+}
+.slide--22__title-text {
+  width: calc(100% - 23em);
+}
+.slide--22__title h2 {
+  font-size: 10.7em;
+  margin-left: 0.3em;
+  margin-bottom: 0.3em;
+}
+.slide--22__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(222, 40, 36);
+}
+
+.slide--22__bottles {
+  justify-content: space-around;
+}
+.slide--22__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.2em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--22__bottle .lines {
+  margin-bottom: 3em;
+}
+.slide--22__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--22__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--22__bottle.first .vertical {
+  height: 5em;
+}
+.slide--22__bottle.second .vertical {
+  height: 10.5em;
+}
+.slide--22__bottle.third .vertical {
+  height: 13em;
+}
+.slide--22__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--22__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--22__bottle.first img {
+  height: 54em;
+}
+.slide--22__bottle.second img {
+  height: 38.5em;
+}
+.slide--22__bottle.third img {
+  height: 38.5em;
+}
+
+.slide--22__bottle.second img.icon {
+  height: 8em;
+  margin-bottom: 3em;
+}
+.slide--22__bottle.third img.icon {
+  height: 6em;
+  margin-bottom: 3em;
+}
+/*#endregion sl22*/
+
+/*#region sl23*/
+.slide--23 {
+  padding-left: 0;
+  padding-right: 7em;
+}
+.slide--23 .slide__content > img.texture {
+  position: absolute;
+  top: 15em;
+  width: 9%;
+  height: 81em;
+  left: 50%;
+  transform: translateX(calc(-50% - 28em));
+}
+.slide--23__left {
+  width: 37%;
+  height: 100vh;
+}
+.slide--23__text {
+  width: 63%;
+  padding-left: 6%;
+  margin-top: 14.5em;
+}
+.slide--23__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--23__text h2 {
+  font-size: 10.5em;
+  margin-bottom: 0.1em;
+}
+.slide--23__text h3 {
+  font-size: 4em;
+  line-height: 1.05em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.slide--23__content {
+  display: flex;
+  gap: 2em;
+}
+.slide--23__block {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+.slide--23__block.third {
+  margin-bottom: 0;
+}
+.slide--23__block img {
+  width: 19em;
+}
+.slide--23__block p.title {
+  font-size: 2.6em;
+  line-height: 1.05em;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+.slide--23__block p.description {
+  font-size: 2.42em;
+  line-height: 1.1em;
+}
+
+.slide--23__skins {
+  display: flex;
+  justify-content: center;
+  gap: 2.2em;
+  margin-bottom: 9.5em;
+}
+.slide--23__skin img {
+  margin: 0 auto 1em;
+  width: 11.3em;
+  height: auto;
+}
+.slide--23__skin p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.slide--23__number {
+  display: flex;
+  align-items: center;
+  gap: 1.1em;
+  margin-bottom: 3em;
+}
+.slide--23__number.third {
+  margin-bottom: 0;
+}
+.slide--23__number p.number {
+  font-size: 9em;
+  width: 2.5em;
+}
+.slide--23__number p.description {
+  font-size: 2.7em;
+  font-weight: 700;
+}
+
+.slide--23 p.note {
+  position: absolute;
+  font-size: 1.6em;
+  top: 62.5em;
+  right: 4em;
+}
+/*#endregion sl23*/
+
+/*#region sl24*/
+.slide--24 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 4em;
+  padding-right: 4.5em;
+}
+.slide--24__title {
+  position: relative;
+  left: -4em;
+  width: calc(100% + 8.5em);
+  align-items: flex-end;
+  margin-bottom: 5.5em;
+}
+.slide--24__title img {
+  width: 23em;
+}
+.slide--24__title-text {
+  width: calc(100% - 23em);
+}
+.slide--24__title h2 {
+  font-size: 12em;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--24__title h3 {
+  padding: 0.3em 1em;
+  font-size: 3.9em;
+  color: var(--light-c);
+  background-color: rgb(238, 177, 79);
+}
+
+.slide--24__bottles {
+  justify-content: space-around;
+}
+.slide--24__bottle {
+  position: relative;
+}
+.slide--24__bottle p,
+.slide--24__bottle-subwrapper p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 1.85em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--24__bottle-subwrapper {
+  position: relative;
+  left: -4em;
+}
+.slide--24__bottle.fourth {
+  left: -2em;
+}
+.slide--24__bottle.fifth {
+  left: -0.8em;
+}
+
+.slide--24__bottle .lines,
+.slide--24__bottle-subwrapper .lines {
+  margin-bottom: 2.5em;
+}
+.slide--24__bottle .horizontal,
+.slide--24__bottle-subwrapper .horizontal {
+  width: 24em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--24__bottle .vertical,
+.slide--24__bottle-subwrapper .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--24__bottle.first .vertical {
+  height: 7em;
+}
+.slide--24__bottle-subwrapper .vertical {
+  height: 20.5em;
+}
+.slide--24__bottle.fourth .vertical {
+  height: 18em;
+}
+.slide--24__bottle.fifth .vertical {
+  height: 17.5em;
+}
+.slide--24__bottle.sixth .vertical {
+  height: 7.8em;
+}
+
+.slide--24__bottle .circle,
+.slide--24__bottle-subwrapper .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--24__bottle-subwrapper-content {
+  display: flex;
+  justify-content: space-around;
+  gap: 2.5em;
+  position: relative;
+  bottom: -10em;
+}
+.slide--24__bottle.second p,
+.slide--24__bottle.third p {
+  position: absolute;
+  top: -2em;
+  font-weight: 700;
+  font-size: 2.2em;
+  text-align: center;
+  width: 100%;
+}
+.slide--24__bottle.second img.icon,
+.slide--24__bottle.third img.icon {
+  position: absolute;
+  top: -12em;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  width: 7em;
+}
+
+.slide--24__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--24__bottle.first img {
+  height: 49em;
+}
+.slide--24__bottle.second img {
+  height: 32em;
+}
+.slide--24__bottle.third img {
+  height: 31.5em;
+}
+.slide--24__bottle.fourth img {
+  height: 33em;
+}
+.slide--24__bottle.fourth img.icon {
+  height: 7em;
+  margin-bottom: 3em;
+}
+.slide--24__bottle.fifth img {
+  height: 29em;
+}
+.slide--24__bottle.fifth img.icon {
+  height: 5.5em;
+  margin-bottom: 3em;
+}
+.slide--24__bottle.sixth img {
+  height: 49em;
+}
+/*#endregion sl24*/
+
+/*#region sl25*/
+.slide--25 {
+  padding-left: 0;
+  padding-right: 7em;
+}
+.slide--25 .slide__content > img.texture {
+  position: absolute;
+  top: 15em;
+  width: 9%;
+  height: 81em;
+  left: 50%;
+  transform: translateX(calc(-50% - 28em));
+}
+.slide--25__left {
+  width: 37%;
+  height: 100vh;
+}
+.slide--25__text {
+  width: 63%;
+  padding-left: 4.5%;
+  margin-top: 16em;
+}
+.slide--25__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--25__text h2 {
+  font-size: 10.5em;
+  margin-bottom: 0.1em;
+}
+.slide--25__text h3 {
+  font-size: 4em;
+  line-height: 1.05em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.slide--25__text h4 {
+  font-size: 4.1em;
+  line-height: 1.05em;
+  margin-bottom: 0.8em;
+}
+
+.slide--25__up {
+  display: flex;
+  gap: 4em;
+  margin-bottom: 3.5em;
+}
+.slide--25__up > img {
+  height: 18em;
+}
+.slide--25__up-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5em;
+}
+.slide--25__up-right h5 {
+  grid-column: 1 / -1;
+  width: max-content;
+  background-color: #e28147;
+  color: var(--light-c);
+  font-size: 2.8em;
+  font-weight: 700;
+  padding: 0.4em 0.2em;
+  height: max-content;
+}
+.slide--25__up-right div {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+.slide--25__up-right p.small {
+  font-size: 2.9em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.slide--25__up-right p.num {
+  font-size: 10.5em;
+}
+.slide--25__line {
+  width: 100em;
+  height: 0.4em;
+  background-color: var(--dark-c);
+  margin-bottom: 3.5em;
+}
+
+.slide--25__bottom {
+  display: flex;
+  gap: 1.6em;
+}
+.slide--25__icons {
+  display: flex;
+  gap: 1.4em;
+}
+.slide--25__icons p.title {
+  font-size: 2.7em;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+.slide--25__icon img {
+  height: 12em;
+  width: auto;
+  margin: 0 auto 1em;
+}
+.slide--25__icon p {
+  font-size: 1.9em;
+  line-height: 1.1em;
+  font-weight: 700;
+  text-align: center;
+}
+/*#endregion sl25*/
+
+/*#region sl26*/
+.slide--26 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 7em;
+  padding-right: 7em;
+}
+.slide--26__title {
+  position: relative;
+  left: -7em;
+  width: calc(100% + 14em);
+  align-items: flex-end;
+  margin-bottom: 6.5em;
+}
+.slide--26__title-left img {
+  width: 22em;
+}
+.slide--26__title-left p {
+  text-align: center;
+  font-weight: 700;
+  background-color: #e28147;
+  font-size: 2.8em;
+  padding: 0.4em;
+}
+.slide--26__title-text {
+  width: calc(100% - 22em);
+}
+.slide--26__title h2 {
+  font-size: 11em;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--26__title h3 {
+  padding: 0.3em 1em;
+  font-size: 3.9em;
+  color: var(--light-c);
+  background-color: #e28147;
+}
+
+.slide--26__bottles {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.slide--26__bottle.sixth {
+  position: relative;
+  left: 2.4em;
+}
+.slide--26__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 1.7em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+.slide--26__bottle.sixth p {
+  position: relative;
+  top: 3.3em;
+}
+.slide--26__bottle.eight p {
+  position: relative;
+  top: 1.4em;
+}
+.slide--26__bottle-wrapper {
+  position: relative;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 1em;
+}
+.slide--26__bottle-wrapper.first {
+  width: 39%;
+}
+.slide--26__bottle-wrapper.second {
+  width: 61%;
+}
+.slide--26__bottle-wrapper .decorator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 3em;
+  width: 98%;
+  border: solid 0.5em #e28147;
+  border-top: none;
+}
+.slide--26__bottle-wrapper .decorator-text {
+  position: absolute;
+  left: 50%;
+  bottom: -1.5em;
+  transform: translateX(-50%);
+  width: max-content;
+  text-align: center;
+  font-size: 2.6em;
+  color: #e28147;
+}
+
+.slide--26__bottle .lines {
+  margin-bottom: 1.5em;
+}
+.slide--26__bottle.sixth .lines {
+  position: relative;
+  top: 6em;
+}
+.slide--26__bottle.eight .lines {
+  position: relative;
+  top: 2.5em;
+}
+.slide--26__bottle .horizontal {
+  width: 10em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--26__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--26__bottle.first .vertical {
+  height: 20.5em;
+}
+.slide--26__bottle.second .vertical {
+  height: 9.5em;
+}
+.slide--26__bottle.third .vertical {
+  height: 16.5em;
+}
+.slide--26__bottle.fourth .vertical {
+  height: 3.5em;
+}
+.slide--26__bottle.fifth .vertical {
+  height: 25.5em;
+}
+.slide--26__bottle.sixth .vertical {
+  height: 5.5em;
+}
+.slide--26__bottle.seventh .vertical {
+  height: 9.5em;
+}
+.slide--26__bottle.eight .vertical {
+  height: 8.5em;
+}
+.slide--26__bottle.nineth .vertical {
+  height: 13.6em;
+}
+.slide--26__bottle.tenth .vertical {
+  height: 3.5em;
+}
+
+.slide--26__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--26__bottle img {
+  margin: 0 auto;
+  width: auto;
+  max-width: max-content;
+}
+.slide--26__bottle.first img {
+  height: 26em;
+}
+.slide--26__bottle.second img {
+  height: 24.2em;
+  margin-bottom: 1.8em;
+}
+.slide--26__bottle.third img {
+  height: 28em;
+  margin-bottom: 1.9em;
+}
+.slide--26__bottle.fourth img {
+  height: 30em;
+  margin-bottom: 1.9em;
+}
+.slide--26__bottle.fifth img {
+  height: 20em;
+  margin-bottom: 1em;
+}
+.slide--26__bottle.sixth img {
+  height: 36em;
+  margin-bottom: 0.5em;
+}
+.slide--26__bottle.sixth img.icon {
+  position: relative;
+  top: 5em;
+  height: 5em;
+  width: max-content;
+}
+.slide--26__bottle.seventh img {
+  height: 36em;
+  margin-bottom: 1em;
+}
+.slide--26__bottle.eight {
+  position: relative;
+}
+.slide--26__bottle.eight img {
+  height: 29em;
+  margin-bottom: 1em;
+}
+.slide--26__bottle.eight p.tip {
+  position: absolute;
+  font-size: 1.8em;
+  font-weight: 700;
+  line-height: 1.1em;
+  top: 5.6em;
+}
+.slide--26__bottle.eight p.tip.first {
+  text-align: right;
+  left: 1em;
+}
+.slide--26__bottle.eight p.tip.second {
+  text-align: left;
+  right: -1em;
+}
+.slide--26__bottle.nineth img {
+  height: 32em;
+  margin-bottom: 1em;
+}
+.slide--26__bottle.tenth img {
+  height: 32em;
+  margin-bottom: 1em;
+}
+/*#endregion sl26*/
+
+/*#region sl27*/
+.slide--27 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 11em;
+  padding-right: 9em;
+}
+.slide--27__title {
+  position: relative;
+  left: -11em;
+  width: calc(100% + 20em);
+  align-items: flex-end;
+  margin-bottom: 5.3em;
+}
+.slide--27__title-left img {
+  width: 22em;
+}
+.slide--27__title-left p {
+  text-align: center;
+  font-weight: 700;
+  background-color: #e28147;
+  font-size: 2.8em;
+  padding: 0.4em;
+}
+.slide--27__title-text {
+  width: calc(100% - 22em);
+}
+.slide--27__title h2 {
+  font-size: 11em;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--27__title h3 {
+  padding: 0.3em 1em;
+  font-size: 3.9em;
+  color: var(--light-c);
+  background-color: #e28147;
+}
+
+.slide--27__bottles {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.slide--27__bottle {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+.slide--27__bottle.second {
+  position: relative;
+  left: 3em;
+}
+
+.slide--27__bottle p {
+  width: max-content;
+  font-size: 2.2em;
+  line-height: 1.15em;
+  font-weight: 700;
+}
+
+.slide--27__bottle .lines {
+  display: flex;
+  align-items: center;
+}
+
+.slide--27__bottle .horizontal {
+  width: 5em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--27__bottle .vertical {
+  width: 0.3em;
+  height: 15em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+
+.slide--27__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--27__bottle img {
+  margin: 0 auto;
+  width: auto;
+  max-width: max-content;
+}
+.slide--27__bottle.first img {
+  height: 66em;
+}
+.slide--27__bottle.second img {
+  height: 63.2em;
+  position: relative;
+  top: 1em;
+}
+.slide--27__bottle.third img {
+  height: 66em;
+  position: relative;
+  left: 3em;
+}
+/*#endregion sl27*/
+
+/*#region sl28*/
+.slide--28 {
+  padding-left: 0;
+  padding-right: 7em;
+}
+.slide--28 .slide__content > img.texture {
+  position: absolute;
+  top: 15em;
+  width: 10%;
+  height: 94em;
+  left: 50%;
+  transform: translateX(calc(-50% - 24.5em));
+}
+.slide--28__left {
+  width: 40%;
+  height: 100vh;
+}
+.slide--28__text {
+  width: 60%;
+  padding-left: 5%;
+  margin-top: 15em;
+}
+.slide--28__text-content {
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--28__text h2 {
+  font-size: 10.5em;
+  margin-bottom: 0.1em;
+}
+.slide--28__text h3 {
+  font-size: 4em;
+  line-height: 1.05em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.slide--28__text h4 {
+  padding: 0.2em 0.4em;
+  font-size: 3.1em;
+  line-height: 1.05em;
+  margin-bottom: 0.8em;
+  background-color: rgb(37, 142, 64);
+  color: var(--light-c);
+}
+
+.slide--28__text ul {
+  list-style: disc;
+  margin-left: 3em;
+}
+.slide--28__text ul li {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+.slide--28__text ul li:last-child {
+  margin-bottom: 0;
+}
+
+.slide--28__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4em;
+  width: 99em;
+  margin-bottom: 2.2em;
+}
+.slide--28__icon {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 49%;
+}
+.slide--28__icon img {
+  height: 18em;
+  width: auto;
+}
+.slide--28__icon p.title {
+  font-size: 2.9em;
+  line-height: 1.2em;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+.slide--28__icon p.text {
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.slide--28 p.note {
+  position: absolute;
+  font-size: 2.1em;
+  line-height: 1.2em;
+  top: 47em;
+  right: 3.9em;
+  text-align: right;
+}
+/*#endregion sl28*/
+
+/*#region sl29*/
+.slide--29 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+.slide--29__title {
+  position: relative;
+  left: -8em;
+  width: calc(100% + 16em);
+  align-items: flex-end;
+  margin-bottom: 6em;
+}
+.slide--29__title img {
+  width: 23em;
+}
+.slide--29__title-text {
+  width: calc(100% - 23em);
+}
+.slide--29__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--29__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(37, 142, 64);
+}
+
+.slide--29__bottles {
+  justify-content: space-around;
+}
+.slide--29__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.05em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--29__bottle .lines {
+  margin-bottom: 2.5em;
+}
+.slide--29__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--29__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--29__bottle.first .vertical {
+  height: 8em;
+}
+.slide--29__bottle.second .vertical {
+  height: 8.3em;
+}
+.slide--29__bottle.third .vertical {
+  height: 15em;
+}
+.slide--29__bottle.fourth .vertical {
+  height: 15em;
+}
+.slide--29__bottle.fifth .vertical {
+  height: 6em;
+}
+.slide--29__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--29__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--29__bottle.first img {
+  height: 46em;
+}
+.slide--29__bottle.second img {
+  height: 46em;
+}
+.slide--29__bottle.third img {
+  height: 42em;
+}
+.slide--29__bottle.fourth img {
+  height: 40em;
+}
+.slide--29__bottle.fifth img {
+  height: 42em;
+}
+/*#endregion sl29*/
+
+/*#region sl30*/
+.slide--30 {
+  padding-left: 0;
+  padding-right: 7em;
+}
+.slide--30 .slide__content > img.texture {
+  position: absolute;
+  top: 15em;
+  width: 9%;
+  height: 83em;
+  left: 50%;
+  transform: translateX(calc(-50% - 29em));
+}
+.slide--30__left {
+  width: 37%;
+  height: 100vh;
+}
+.slide--30__left img {
+  object-position: top;
+}
+.slide--30__text {
+  width: 63%;
+  padding-left: 4.5%;
+  margin-top: 14em;
+}
+.slide--30__text-content {
+  position: relative;
+  left: 1em;
+  width: max-content;
+  margin: 0 auto;
+}
+.slide--30__text h2 {
+  font-size: 9em;
+  margin-bottom: 0.1em;
+}
+.slide--30__text h3 {
+  font-size: 3.8em;
+  line-height: 1.05em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+.slide--30__text h4 {
+  font-size: 2.8em;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+.slide--30__main-content {
+  display: flex;
+  gap: 3em;
+}
+.slide--30__block {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.slide--30__block img {
+  width: 16em;
+  aspect-ratio: 1 / 1;
+}
+.slide--30__block p.title {
+  font-size: 3.1em;
+  line-height: 1.1em;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+.slide--30__block p.text {
+  font-size: 2.55em;
+  line-height: 1.15em;
+}
+.slide--30__main-part h5 {
+  background-color: rgb(192, 0, 0);
+  color: var(--light-c);
+  font-size: 3em;
+  text-align: center;
+  padding: 0.3em 0.1em;
+  margin-bottom: 0.3em;
+}
+.slide--30__main-part p.result {
+  font-size: 2.5em;
+  line-height: 1.1em;
+  margin-bottom: 0.3em;
+}
+.slide--30__numbers {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.slide--30__numbers p.number {
+  font-size: 8.5em;
+}
+.slide--30__numbers p.description {
+  font-size: 2.8em;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+.slide--30__main-part p.last {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.slide--30 p.note {
+  position: absolute;
+  font-size: 2.1em;
+  top: 47.2em;
+  right: 3.5em;
+  text-align: right;
+}
+/*#endregion sl30*/
+
+/*#region sl31*/
+.slide--31 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+.slide--31__title {
+  position: relative;
+  left: -8em;
+  width: calc(100% + 16em);
+  align-items: flex-end;
+  margin-bottom: 6em;
+}
+.slide--31__title img {
+  width: 23em;
+}
+.slide--31__title-text {
+  width: calc(100% - 23em);
+}
+.slide--31__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--31__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  color: var(--light-c);
+  background-color: rgb(192, 0, 0);
+}
+
+.slide--31__bottles {
+  justify-content: space-around;
+}
+.slide--31__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.05em;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+}
+
+.slide--31__bottle .lines {
+  margin-bottom: 2.5em;
+}
+.slide--31__bottle .horizontal {
+  width: 18em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--31__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--31__bottle.first .vertical {
+  height: 6em;
+}
+.slide--31__bottle.second .vertical {
+  height: 18.3em;
+}
+.slide--31__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--31__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--31__bottle.first img {
+  height: 55em;
+}
+.slide--31__bottle.second img {
+  height: 47em;
+  position: relative;
+  top: -4em;
+}
+/*#endregion sl31*/
+
+/*#region sl32*/
+.slide--32 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 7em;
+  padding-right: 7em;
+}
+.slide--32__title {
+  position: relative;
+  left: -7em;
+  width: calc(100% + 14em);
+  align-items: flex-end;
+  margin-bottom: 5.2em;
+}
+.slide--32__title img {
+  width: 23em;
+}
+.slide--32__title-text {
+  width: calc(100% - 23em);
+}
+.slide--32__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--32__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  background-color: var(--light-c);
+}
+
+.slide--32__bottles-wrapper {
+  display: flex;
+  gap: 5em;
+}
+.slide--32__bottles {
+  justify-content: space-around;
+}
+.slide--32__bottle {
+  position: relative;
+}
+.slide--32__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.05em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+.slide--32__bottle.first p,
+.slide--32__bottle.second p,
+.slide--32__bottle.third p {
+  margin-bottom: 2.8em;
+}
+.slide--32__bottle p.absolute {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.4em;
+}
+
+.slide--32__bottle .lines {
+  margin-bottom: 2em;
+}
+.slide--32__bottle .horizontal {
+  width: 13em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--32__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--32__bottle.first .vertical {
+  height: 2em;
+}
+.slide--32__bottle.second .vertical {
+  height: 9em;
+}
+.slide--32__bottle.third .vertical {
+  height: 9em;
+}
+.slide--32__bottle.fourth .vertical {
+  height: 2em;
+}
+.slide--32__bottle.fifth .vertical {
+  height: 9em;
+}
+.slide--32__bottle.sixth .vertical {
+  height: 11.5em;
+}
+.slide--32__bottle.seventh .vertical {
+  height: 13.5em;
+}
+.slide--32__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--32__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--32__bottle.first img {
+  height: 55em;
+}
+.slide--32__bottle.second img {
+  height: 46em;
+}
+.slide--32__bottle.third img {
+  height: 48em;
+}
+.slide--32__bottle.fourth img {
+  height: 55em;
+}
+.slide--32__bottle.fifth img {
+  height: 48em;
+}
+.slide--32__bottle.sixth img {
+  height: 48.5em;
+}
+.slide--32__bottle.seventh img {
+  height: 48.5em;
+}
+/*#endregion sl32*/
+
+/*#region sl33*/
+.slide--33 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 7em;
+  padding-right: 7em;
+}
+.slide--33__title {
+  position: relative;
+  left: -7em;
+  width: calc(100% + 14em);
+  align-items: center;
+  margin-bottom: 3.2em;
+}
+.slide--33__title img {
+  width: 20em;
+}
+.slide--33__title-text {
+  width: calc(100% - 20em);
+}
+.slide--33__title h2 {
+  font-size: 10em;
+  font-weight: 700;
+  margin-left: 0.3em;
+}
+
+.slide--33__line {
+  width: 0.4em;
+  height: 75em;
+  background-color: var(--light-c);
+}
+
+.slide--33__bottles-wrapper {
+  width: 48.5%;
+}
+.slide--33__bottles {
+  justify-content: space-around;
+}
+.slide--33__bottles-wrapper-part {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding-bottom: 2em;
+  margin-bottom: 3em;
+}
+.slide--33__bottles-wrapper.second .slide--33__bottles-wrapper-part.bottom {
+  padding-bottom: 1em;
+}
+.slide--33__decorator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 98%;
+  height: 3em;
+  border: solid 0.3em var(--light-c);
+  border-top: none;
+}
+.slide--33__bottles-wrapper-part p.slide--33__decorator-text {
+  position: absolute;
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--light-c);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1.5em;
+  width: max-content;
+}
+
+.slide--33__bottle {
+  position: relative;
+}
+.slide--33__bottle.fourth,
+.slide--33__bottle.fifth {
+  position: relative;
+  left: 2em;
+}
+.slide--33__bottle.nineth,
+.slide--33__bottle.tenth,
+.slide--33__bottle.eleventh {
+  position: relative;
+  left: 3.5em;
+}
+.slide--33__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 1.85em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+.slide--33__bottle p.time {
+  position: absolute;
+  left: 50%;
+  transform: translateX(calc(-50% - 5em));
+  top: 7.8em;
+  text-align: right;
+}
+.slide--33__bottle p.time span.num {
+  font-size: 3em;
+  line-height: 1em;
+}
+.slide--33__bottle p.time span.text {
+  font-size: 1em;
+  line-height: 1em;
+}
+.slide--33__bottle.fourth p.time,
+.slide--33__bottle.fifth p.time,
+.slide--33__bottle.sixth p.time,
+.slide--33__bottle.nineth p.time,
+.slide--33__bottle.tenth p.time,
+.slide--33__bottle.eleventh p.time {
+  top: 9.7em;
+}
+.slide--33__bottle.fifth p.time {
+  transform: translateX(calc(-50% - 6.8em));
+}
+
+.slide--33__bottle .lines {
+  margin-bottom: 2em;
+}
+.slide--33__bottle .horizontal {
+  width: 13em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--33__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--33__bottle.first .vertical,
+.slide--33__bottle.second .vertical,
+.slide--33__bottle.third .vertical,
+.slide--33__bottle.seventh .vertical,
+.slide--33__bottle.eight .vertical {
+  height: 2.5em;
+}
+.slide--33__bottle.fourth .vertical,
+.slide--33__bottle.sixth .vertical,
+.slide--33__bottle.nineth .vertical,
+.slide--33__bottle.tenth .vertical  {
+  height: 5.5em;
+}
+.slide--33__bottle.fifth .vertical {
+  height: 2.5em;
+}
+.slide--33__bottle.eleventh .vertical {
+  height: 1.5em;
+}
+
+.slide--33__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--33__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--33__bottle.first img,
+.slide--33__bottle.second img,
+.slide--33__bottle.third img,
+.slide--33__bottle.fourth img,
+.slide--33__bottle.sixth img,
+.slide--33__bottle.seventh img,
+.slide--33__bottle.eight img,
+.slide--33__bottle.nineth img,
+.slide--33__bottle.tenth img {
+  height: 16em;
+}
+
+.slide--33__bottle.fifth img,
+.slide--33__bottle.eleventh img {
+  height: 21em;
+}
+
+/*#endregion sl33*/
+
+/*#region sl34*/
+.slide--34 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 7em;
+  padding-right: 7em;
+}
+.slide--34__title {
+  position: relative;
+  left: -7em;
+  width: calc(100% + 14em);
+  align-items: flex-end;
+  margin-bottom: 4.8em;
+}
+.slide--34__title img {
+  width: 23em;
+}
+.slide--34__title-text {
+  width: calc(100% - 23em);
+}
+.slide--34__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--34__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  background-color: rgb(225, 10, 20);
+}
+
+.slide--34__bottles {
+  justify-content: space-around;
+}
+.slide--34__bottle {
+  position: relative;
+}
+.slide--34__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.05em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+
+.slide--34__bottle .lines {
+  margin-bottom: 2em;
+}
+.slide--34__bottle .horizontal {
+  width: 13em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--34__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--34__bottle.first .vertical {
+  height: 2em;
+}
+.slide--34__bottle.second .vertical {
+  height: 7em;
+}
+.slide--34__bottle.third .vertical {
+  height: 20em;
+}
+.slide--34__bottle.fourth .vertical {
+  height: 7em;
+}
+.slide--34__bottle.fifth .vertical {
+  height: 20em;
+}
+.slide--34__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--34__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--34__bottle.first img {
+  height: 54em;
+}
+.slide--34__bottle.second img {
+  height: 53.5em;
+}
+.slide--34__bottle.third img {
+  height: 39em;
+}
+.slide--34__bottle.fourth img {
+  height: 50em;
+}
+.slide--34__bottle.fifth img {
+  height: 39em;
+}
+/*#endregion sl34*/
+
+/*#region sl35*/
+.slide--35 {
+  background-image: url(../images/sl11-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 8.5em;
+  padding-right: 8.5em;
+}
+.slide--35__title {
+  position: relative;
+  left: -8.5em;
+  width: calc(100% + 17em);
+  align-items: flex-end;
+  margin-bottom: 4.8em;
+}
+.slide--35__title img {
+  width: 23em;
+}
+.slide--35__title-text {
+  width: calc(100% - 23em);
+}
+.slide--35__title h2 {
+  font-size: 12em;
+  font-weight: 700;
+  margin-left: 0.3em;
+  margin-bottom: 0.15em;
+}
+.slide--35__title h3 {
+  padding: 0.3em 1em;
+  font-size: 4em;
+  background-color: rgb(241, 193, 161);
+}
+
+.slide--35__bottles {
+  justify-content: space-around;
+}
+.slide--35__bottle {
+  position: relative;
+}
+.slide--35__bottle p {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto 1em;
+  font-size: 2.05em;
+  line-height: 1.1em;
+  margin-bottom: 0.8em;
+}
+
+.slide--35__bottle .lines {
+  margin-bottom: 2em;
+}
+.slide--35__bottle .horizontal {
+  width: 13em;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--35__bottle .vertical {
+  width: 0.3em;
+  margin: 0 auto;
+  background-color: var(--dark-c);
+}
+.slide--35__bottle.first .vertical {
+  height: 7em;
+}
+.slide--35__bottle.second .vertical {
+  height: 12em;
+}
+.slide--35__bottle.third .vertical {
+  height: 12.5em;
+}
+.slide--35__bottle.fourth .vertical {
+  height: 13em;
+}
+.slide--35__bottle .circle {
+  margin: 0 auto;
+  width: 0.8em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--dark-c);
+}
+
+.slide--35__bottle img {
+  margin: 0 auto;
+  width: auto;
+}
+.slide--35__bottle.first img {
+  height: 52em;
+}
+.slide--35__bottle.second img {
+  height: 50em;
+}
+.slide--35__bottle.third img {
+  height: 50em;
+}
+.slide--35__bottle.fourth img {
+  height: 50em;
+}
+/*#endregion sl35*/
+
+/*#region slInstruction*/
+.slide--instrusction {
+  padding-top: 4em;
+}
+.slide--instrusction__title {
+  justify-content: space-between;
+}
+.slide--instrusction__title img {
+  height: 34em;
+  width: auto;
+}
+.slide--instrusction__title-text h2 {
+  font-size: 6.7em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+.slide--instrusction__title-text h3 {
+  font-size: 3.9em;
+  line-height: 1.2em;
+}
+
+.slide--instruction__content {
+  position: relative;
+  top: -4em;
+}
+.slide--instruction__content h4 {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 0.8em;
+}
+.slide--instruction__blocks {
+  justify-content: space-around;
+}
+.slide--instruction__block {
+  
+  background-color: #F4F4F8;
+  padding: 3em;
+  border-radius: 2em;
+}
+.slide--instruction__block.first {
+  width: 33%;
+}
+.slide--instruction__block.second {
+  width: 33%;
+}
+.slide--instruction__block.third {
+  width: 30.5%;
+}
+.slide--instruction__block-content {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.slide--instruction__block-content p {
+  font-size: 3em;
+  line-height: 1.2em;
+  margin-bottom: 0.8em;
+  width: 16.2em;
+  min-width: max-content;
+}
+.slide--instruction__block-content p strong {
+  display: inline;
+}
+.slide--instruction__block-content img.screen {
+  margin: 0 auto;
+  height: max-content;
+}
+.slide--instruction__block.first img.screen {
+  width: 52em;
+}
+.slide--instruction__block.second img.screen {
+  width: 50em;
+}
+.slide--instruction__block.third img.screen {
+  width: 28em;
+}
+.slide--instruction__block-content img.arrow {
+  position: absolute;
+  left: 50%;
+  height: auto;
+  width: 8em;
+  padding: 0;
+}
+.slide--instruction__block.first img.arrow {
+  top: 19.5em;
+  transform: translateX(calc(-50% - 15.5em));
+}
+.slide--instruction__block.second img.arrow {
+  top: 42em;
+  transform: translateX(calc(-50% - 9.5em));
+}
+.slide--instruction__block.third img.arrow {
+  top: 48em;
+  transform: translateX(calc(-50% + 12.5em));
+}
+/*#endregion slInstruction*/
+
+
+/*Style for rotate block*/
+/*#region rotate*/
+.rotate__block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10em 3em 10em 12em;
+  background-color: var(--light-c);
+  z-index: 15;
+}
+.rotate__block.visible {
+  display: flex;
+}
+.rotate__block img {
+  height: auto;
+  width: 30%;
+  margin: 0 0 3em 19em;
+}
+.rotate__block-part:nth-child(1) {
+  margin-bottom: 10em;
+}
+.rotate__block-part:nth-child(2) img {
+  width: 40%;
+  margin-left: 17em;
+  animation: rotateAppearing 5s ease-in-out infinite;
+}
+.rotate__block p {
+  position: relative;
+  width: max-content;
+  font-size: 3.5em;
+}
+.rotate__block p::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -1em;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 1.7em;
+}
+.rotate__block-part:nth-child(1) p::before {
+  content: '1';
+}
+.rotate__block-part:nth-child(2) p::before {
+  content: '2';
+}
+/*#endregion rotate*/
+
+/*Style for navigation arrows*/
+/*#region arrows*/
+.arrows {
+  position: fixed;
+  left: 50%;
+  top: 45em;
+  transform: translate(-50%, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 99.7vw;
+  z-index: 10;
+}
+.arrows--top {
+  top: 35em;
+}
+.arrow {
+  padding: 2em;
+  width: 10em;
+  height: 19em;
+  transform: scale(1);
+  transition: transform 0.4s linear;
+}
+.arrow.hidden {
+  transform: scale(0);
+}
+.arrow:first-child {
+  padding-left: 0.5em;
+  transform-origin: left center;
+}
+.arrow:last-child {
+  padding-right: 0.5em;
+  transform-origin: right center;
+}
+.arrow.arrow--more-left {
+  position: relative;
+  left: -2.9em;
+}
+.arrow svg {
+  width: 100%;
+  height: 100%;
+  stroke: rgb(150, 150, 150);
+  stroke-width: 1em;
+  fill: rgba(150, 150, 150, 0.5);
+}
+.arrow--white svg {
+  stroke: var(--light-c);
+  fill: rgba(255, 255, 255, 0.5);
+}
+.arrow--light-grey svg {
+  stroke: rgba(215, 215, 215, 1);
+  fill: rgba(215, 215, 215, 0.5);
+}
+/*#endregion arrows*/
+
+/*Style for forbidden block*/
+/*#region forbidden*/
+.warning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  transform: scale(0.8);
+  color: var(--forbidden-red-c);
+  font-size: 4em;
+  animation: incrementAppearing 2s ease-in-out;
+  position: relative;
+  z-index: 12;
+}
+.warning > p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.warning > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-bottom: 2em;
+}
+.warning > div strong {
+  margin-bottom: 0.8em;
+  font-size: 1.3em;
+}
+.warning > div svg {
+  width: 4em;
+  fill: var(--forbidden-red-c);
+}
+.warning button {
+  width: auto;
+  margin: 0 auto;
+  padding: 0.7em 1.4em;
+  background-color: var(--forbidden-red-c);
+  border: 0.3vw solid var(--forbidden-red-c);
+  color: var(--light-c);
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+  transition: opacity 0.4s linear;
+  position: relative;
+  z-index: 12;
+}
+.warning button:hover {
+  opacity: 0.8;
+}
+.warning.warning--small {
+  position: absolute;
+  left: 1.6em;
+  bottom: 0.5em;
+  height: max-content;
+  width: 90%;
+  animation: none;
+  font-size: 2.5em;
+  width: max-content;
+  z-index: 10;
+}
+.warning.warning--small > p {
+  margin-bottom: 2em;
+}
+.warning.warning--small > div {
+  gap: 0.4em;
+  margin-bottom: 0;
+}
+.warning.warning--small > div strong {
+  margin-bottom: 0;
+  font-size: 1.3em;
+}
+.warning.warning--small > div img {
+  width: 4em;
+}
+.warning.warning--white {
+  color: var(--light-c);
+}
+.warning.warning--white > div svg {
+  fill: var(--light-c);
+}
+.warning.warning--grey {
+  color: var(--light-c);
+  filter: brightness(0.9);
+}
+/*#endregion forbidden*/
