@@ -4414,6 +4414,7 @@ p.slide-numbering.left {
 }
 .arrow.hidden {
   transform: scale(0);
+  pointer-events: none;
 }
 .arrow:first-child {
   padding-left: 0.5em;
