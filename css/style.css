@@ -955,9 +955,9 @@ p.slide-numbering.left {
 }
 .slide--9__products-arrows img.arrow.third {
   top: 19em;
-  right: 2em;
+  left: calc((56% - 20em) + 38em);
   height: 4em;
-  width: calc(44% - 17em);
+  width: calc(44% - 20em);
 }
 .slide--9__products-arrows img.arrow.fourth {
   top: 32em;
@@ -973,9 +973,9 @@ p.slide-numbering.left {
 }
 .slide--9__products-arrows img.arrow.sixth {
   top: 43em;
-  right: 2em;
+  left: calc(75.5% - 1.8em);
   height: 4em;
-  width: 23%;
+  width: 24.5%;
 }
 /*#endregion sl9*/
 
@@ -1417,7 +1417,7 @@ p.slide-numbering.left {
   background-color: var(--dark-c);
 }
 .slide--14__bottle.first .vertical {
-  height: 19em;
+  height: 18em;
 }
 .slide--14__bottle.second .vertical {
   height: 16.5em;
@@ -1602,6 +1602,10 @@ p.slide-numbering.left {
 .slide--16__bottle.third {
   margin-left: -3em;
 }
+.slide--16__bottle.eight {
+  position: relative;
+  left: 0.5em;
+}
 .slide--16__bottle.fourth {
   margin-left: -5em;
   margin-right: 1em;
@@ -1613,6 +1617,9 @@ p.slide-numbering.left {
   font-size: 2.2em;
   line-height: 1.1em;
   margin-bottom: 1em;
+}
+.slide--16__bottle.eight p {
+  letter-spacing: -0.01em;
 }
 .slide--16__bottle-wrapper {
   position: relative;
@@ -2725,7 +2732,9 @@ p.slide-numbering.left {
   line-height: 1.1em;
   margin-bottom: 1em;
 }
-
+.slide--24__bottle p strong {
+  display: inline;
+}
 .slide--24__bottle-subwrapper {
   position: relative;
   left: -4em;
@@ -3232,6 +3241,9 @@ p.slide-numbering.left {
   position: relative;
   left: 3em;
 }
+.slide--27__bottle.first {
+  position: relative;
+}
 
 .slide--27__bottle p {
   width: max-content;
@@ -3270,6 +3282,13 @@ p.slide-numbering.left {
   margin: 0 auto;
   width: auto;
   max-width: max-content;
+}
+.slide--27__bottle.first img.decorator {
+  position: absolute;
+  top: 8em;
+  left: 50%;
+  height: 8em;
+  transform: translateX(calc(-50% + 10em));
 }
 .slide--27__bottle.first img {
   height: 66em;
@@ -3453,7 +3472,7 @@ p.slide-numbering.left {
   height: 15em;
 }
 .slide--29__bottle.fourth .vertical {
-  height: 15em;
+  height: 18em;
 }
 .slide--29__bottle.fifth .vertical {
   height: 6em;
@@ -3642,7 +3661,7 @@ p.slide-numbering.left {
   width: max-content;
   margin: 0 auto 1em;
   font-size: 2.05em;
-  line-height: 1.1em;
+  line-height: 1.15em;
   margin-bottom: 1em;
 }
 
@@ -3661,7 +3680,7 @@ p.slide-numbering.left {
   background-color: var(--dark-c);
 }
 .slide--31__bottle.first .vertical {
-  height: 6em;
+  height: 4em;
 }
 .slide--31__bottle.second .vertical {
   height: 18.3em;

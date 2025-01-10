@@ -229,19 +229,19 @@ const slideActions = {
     nextArrowDelay = 1.7;
   },
   20: () => {
-    animateNumber(1);
-    nextArrowDelay = 3.4;
-  },
-  21: () => {
-    gsap.from('.slide--21__bottle.first', { opacity: 0, duration: 0.75, delay: 1, y: 90 });
-    gsap.from('.slide--21__bottle.second', { opacity: 0, duration: 0.75, delay: 1.4, y: 90 });
-    gsap.from('.slide--21__bottle.third', { opacity: 0, duration: 0.75, delay: 1.8, y: 90 });
-    nextArrowDelay = 2.3;
-  },
-  22: () => {
     gsap.from('.slide--22__bottle.first', { opacity: 0, duration: 0.75, delay: 1, y: 90 });
     gsap.from('.slide--22__bottle.second', { opacity: 0, duration: 0.75, delay: 1.4, y: 90 });
     gsap.from('.slide--22__bottle.third', { opacity: 0, duration: 0.75, delay: 1.8, y: 90 });
+    nextArrowDelay = 2.3;
+  },
+  21: () => {
+    animateNumber(1);
+    nextArrowDelay = 3.4;
+  },
+  22: () => {
+    gsap.from('.slide--21__bottle.first', { opacity: 0, duration: 0.75, delay: 1, y: 90 });
+    gsap.from('.slide--21__bottle.second', { opacity: 0, duration: 0.75, delay: 1.4, y: 90 });
+    gsap.from('.slide--21__bottle.third', { opacity: 0, duration: 0.75, delay: 1.8, y: 90 });
     nextArrowDelay = 2.3;
   },
   23: () => {
