@@ -15,7 +15,7 @@ const hiddenArrowClass = 'hidden';
 let nextArrowDelay = 0;
 
 // additional varibles for slides
-const totalSlideAmount = 36;
+const totalSlideAmount = 35;
 const pathNames = Array.from(
   { length: totalSlideAmount }, (_, i) => ({ count: i + 1, pathName:`./slides/slide--${i + 1}.html` })
 );
@@ -324,6 +324,7 @@ const slideActions = {
     nextArrowDelay = 2.3;
   },
   34: () => {
+    clearTimeout(lastSlideActionTimeout);
     gsap.from('.slide--34__bottle.first', { opacity: 0, duration: 0.75, delay: 1, y: 90 });
     gsap.from('.slide--34__bottle.second', { opacity: 0, duration: 0.75, delay: 1.4, y: 90 });
     gsap.from('.slide--34__bottle.third', { opacity: 0, duration: 0.75, delay: 1.8, y: 90 });
@@ -332,24 +333,14 @@ const slideActions = {
     nextArrowDelay = 3.1;
   },
   35: () => {
-    clearTimeout(lastSlideActionTimeout);
     gsap.from('.slide--35__bottle.first', { opacity: 0, duration: 0.75, delay: 1, y: 90 });
     gsap.from('.slide--35__bottle.second', { opacity: 0, duration: 0.75, delay: 1.4, y: 90 });
     gsap.from('.slide--35__bottle.third', { opacity: 0, duration: 0.75, delay: 1.8, y: 90 });
     gsap.from('.slide--35__bottle.fourth', { opacity: 0, duration: 0.75, delay: 2.2, y: 90 });
-    nextArrowDelay = 2.7;
-  },
-  36: () => {
-    gsap.from('.slide--instruction__block.first', { opacity: 0, duration: 0.75, delay: 1, x: 45 });
-    gsap.from('.slide--instruction__block.first img.arrow', { opacity: 0, duration: 0.75, delay: 1.2, x: 45, y: 45 });
-    gsap.from('.slide--instruction__block.second', { opacity: 0, duration: 0.75, delay: 1.6, x: 45 });
-    gsap.from('.slide--instruction__block.second img.arrow', { opacity: 0, duration: 0.75, delay: 1.8, x: 45, y: 45 });
-    gsap.from('.slide--instruction__block.third', { opacity: 0, duration: 0.75, delay: 2.2, x: 45 });
-    gsap.from('.slide--instruction__block.third img.arrow', { opacity: 0, duration: 0.75, delay: 2.4, x: 45, y: 45 });
     lastSlideActionTimeout = setTimeout(() => {
       lastSlideAction();
     }, 10 * 1000);
-  }
+  },
 }
 // function that add animation for element
 function animateSlide(slideNum = 1) {
